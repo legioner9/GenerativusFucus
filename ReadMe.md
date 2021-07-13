@@ -5,3 +5,7 @@
 - generativusFucus обертка
 - fucus возвращаемый функциональный объект
 - propObj опции обертки
+  - closureForFn замыкание для fn
+  - thisForFn объектный контекст для fn
+  - preComutClosure и ... функции внутри обертки создающие архитектуру функции
+  
