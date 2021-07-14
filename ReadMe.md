@@ -1,6 +1,8 @@
 <div align="center">
+
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/legioner9/GenerativusFucus/blob/master/LICENSE)
 </div>
+
 # GenerativusFucus по мотивам [Wrapper](https://github.com/HowProgrammingWorks/Wrapper)
 Задача - создать максимально обобщенный врапер.Разобраться как работает замыкание и объектный контекст.
 ## [v.1](node_modules/v.1/index.js) и варианты использования в директории [test](node_modules/v.1/test)
