@@ -6,7 +6,9 @@
 # GenerativusFucus по мотивам [Wrapper](https://github.com/HowProgrammingWorks/Wrapper)
 Задача - создать максимально обобщенный врапер.Разобраться как работает замыкание и объектный контекст.
 ## [v.1](node_modules/v.1/index.js) и варианты использования в директории [test](node_modules/v.1/test)
-
+### Архитектурная преамбула (nameArht:\<prePropObj>):
+управление поведением врапера через предзадание propObj
+### Описание:
 - generativusFucus обертка
 - fucus возвращаемый функциональный объект
 - propObj опции обертки
@@ -16,7 +18,10 @@
 ### Особенности:
 после вызова обернутая функция как функциональный объект имеет дополнительные методы (printFn()) и поля (args, closureForFn и ...) - ссылки на текущее состояние замыкания и контекста.
 ## [v.2](node_modules/v.2/index.js) и варианты использования в директории [test](node_modules/v.2/test)
-- добавлены методы см: [file](node_modules/v.2/test/counterLimit_assign_t_l_c_r_4.js):
+### Архитектурная преамбула (nameArht:\<postChainSetters>):
+управление поведением врапера после объявления постзадание сеттеров - userable
+### Описание:
+- добавлены методы сеттеры флагов и иногда туда можно перенести сами методы (из preComutClosure например в таймауте ) см: [file](node_modules/v.2/test/counterLimit_assign_t_l_c_r_4.js):
   - limit
   - timer
   - cancel
