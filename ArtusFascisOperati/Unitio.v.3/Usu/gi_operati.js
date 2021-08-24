@@ -13,18 +13,19 @@ const add = (...data) => {
   console.log('event add called with: ', data);
 };
 
-const mfn = memoizeAsync(fn).setLengthCache(3).onEventCache('add', add);
+const mfn = memoizeAsync(fn).setLengthCache(2).onEventCache('add', add);
 
-const fucus = timer(mfn).setLimit(2).setTimer(1200);
-debugger
-fucus(0);
+const fucus = timer(mfn).setLimit(3).setTimer(1200);
+
+fucus(0, callback);
 fucus.printFn();
-debugger
+
 setTimeout(() => {
-  fucus('primus');
+  fucus(1, callback);
+  fucus(2, callback);
 }, 100);
 
 setTimeout(() => {
-  fucus('secundus');
+  fucus(3, callback);
 }, 500);
 
