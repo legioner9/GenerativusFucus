@@ -19,15 +19,17 @@ const artus = (communis, fn) => {
     const ostium = {
       fn,
       args,
-      communis,
     };
     communis.os.prototype.getOstium = () => clone(ostium);
-    debugger
-    if (fn.getOstium) {
 
-    }
     communis.internus(exitus, communis, fn, ...args);
   };
+
+  communis.objProto.getCommunis = () => clone(communis);
+  debugger
+  if (fn.getCommunis) {
+    Object.setPrototypeOf(communis.objProto.getCommunis, fn.__proto__.getCommunis);
+  }
 
   for (const key in communis.objProto) {
     if (communis.objProto.hasOwnProperty(key)) communis.os.prototype[key] = communis.objProto[key];

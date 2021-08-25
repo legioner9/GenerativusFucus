@@ -13,7 +13,7 @@ const callback = (...args) => args;
 const add = (...data) => {
   console.log('event add called with: ', data);
 };
-
+debugger
 const mfn = memoizeAsync(fn).setLengthCache(2).onEventCache('add', add);
 
 const fucus = timer(mfn).setLimit(3).setTimer(1200);
