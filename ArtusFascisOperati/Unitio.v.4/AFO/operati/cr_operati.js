@@ -6,6 +6,7 @@ const fn = function(...args) {
   console.dir({ args });
 };
 
+debugger
 const crFn = cancelResume(fn);
 debugger
 crFn.cancel()
