@@ -14,7 +14,7 @@ debugger
 pcrFn.cancel();
 console.log('cancel flag =', pcrFn.getCommunis.getCommunis().closure.kill)
 pcrFn(0);
-pcrFn.printFn();
+pcrFn.printArgs();
 pcrFn.resume();
 console.log('cancel flag =', pcrFn.getCommunis.getCommunis().closure.kill)
 pcrFn(1);

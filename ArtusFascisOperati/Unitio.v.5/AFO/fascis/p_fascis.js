@@ -3,15 +3,10 @@
 const { artus } = require('../artus/artus');
 
 const objProto = {
-  printFn() {
-
-    const ostium = this.getOstium();
-    const communis = this.getCommunis();
-
-    console.dir({ostium, communis});
+  printArgs() {
+    console.log('printArgs: ', this.getOstium().args);
     return this;
   },
-
 };
 
 const internus = (exitus, communis, fn, ...args) => {
