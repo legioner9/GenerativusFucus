@@ -27,9 +27,6 @@ const communis = {
   },
   objProto,
   closure: {
-    limit: 0,
-    counter: 0,
-    timerMsec: 0,
     kill: false,
   },
 };
