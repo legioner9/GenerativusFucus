@@ -7,13 +7,16 @@ const fn = function(...args) {
   console.dir({ args });
 };
 
-const pFn = print(fn);
-const pcrFn = cancelResume(pFn);
+const crFn = cancelResume(fn);
+const pcrFn = print(crFn);
+
 debugger
 pcrFn.cancel();
+console.log('cancel flag =', pcrFn.getCommunis.getCommunis().closure.kill)
 pcrFn(0);
 pcrFn.printFn();
 pcrFn.resume();
+console.log('cancel flag =', pcrFn.getCommunis.getCommunis().closure.kill)
 pcrFn(1);
 
 

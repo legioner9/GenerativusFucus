@@ -20,22 +20,32 @@ const artus = (communis, fn) => {
       fn,
       args,
     };
+    // define getter for clone ostium
     communis.os.prototype.getOstium = () => clone(ostium);
 
     communis.internus(exitus, communis, fn, ...args);
   };
 
-  communis.objProto.getCommunis = () => clone(communis);
-  debugger
+  // define getter for clone communis
+  const getCommunis = () => clone(communis);
+
+  // add previous getCommunis to prototype that getCommunis - create chain prototype
   if (fn.getCommunis) {
-    Object.setPrototypeOf(communis.objProto.getCommunis, fn.__proto__.getCommunis);
+    const tmp = function() {
+    };
+    tmp.prototype.getCommunis = fn.__proto__.getCommunis;
+    Object.setPrototypeOf(getCommunis, tmp.prototype);
   }
+
+  communis.objProto.getCommunis = getCommunis;
 
   for (const key in communis.objProto) {
     if (communis.objProto.hasOwnProperty(key)) communis.os.prototype[key] = communis.objProto[key];
   }
 
+  // add previous proto to prototype that wrapper - create chain prototype
   Object.setPrototypeOf(communis.os.prototype, fn.__proto__);
+
   Object.setPrototypeOf(exitus, communis.os.prototype);
 
   return exitus;
